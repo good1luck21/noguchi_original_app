@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
-  root 'home#logged_in_top'
+  get 'recieps/new'
+  get 'recieps/index'
+  get 'recieps/:id', to: 'recieps#show', as: 'reciep'
+  root 'home#top'
   get 'procedures/index',         to: 'procedures#index',     as: 'procedures_index'
   get 'procedures/:id/show',      to: 'procedures#show',      as: 'procedures_show'
   get 'procedures/new',           to: 'procedures#new',       as: 'procedures_new'

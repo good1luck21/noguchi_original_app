@@ -6,6 +6,10 @@ User.create!(nickname:  "管理者",
              admin: true)
 
 #サンプルデータ100件（fakerは使ってない）
+# (1..100).each do |i|
+#     Post.create(title: "Post #{i}")
+# end
+
 (1..100).each do |i|
-    Post.create(title: "Post #{i}")
+  Reciep.create(title: "Lesson Reciep #{i}")
 end

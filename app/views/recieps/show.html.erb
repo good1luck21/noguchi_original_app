@@ -1,0 +1,6 @@
+<h1><%= @reciep.title %>の詳細画面です</h1>
+<p>Find me in app/views/recieps/show.html.erb</p>
+
+<% @reciep.procedures.each do |procedure| %>
+  手順 <%= procedure.id %> :<%= procedure.content %><br/>
+<% end %>

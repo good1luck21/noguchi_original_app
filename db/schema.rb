@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_12_222411) do
+ActiveRecord::Schema.define(version: 2022_05_16_023342) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -21,10 +21,17 @@ ActiveRecord::Schema.define(version: 2022_05_12_222411) do
   create_table "procedures", force: :cascade do |t|
     t.string "image"
     t.text "content"
-    t.integer "recipe_id"
+    t.integer "reciep_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "recieps", force: :cascade do |t|
+    t.string "title"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -42,10 +49,10 @@ ActiveRecord::Schema.define(version: 2022_05_12_222411) do
     t.string "password_digest"
     t.string "birthday"
     t.integer "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "remember_digest"
     t.boolean "admin", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
